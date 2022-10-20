@@ -1,4 +1,4 @@
-# Hinata
+# SkyBot-MD
 
 <p align="center">
 	<img src="https://www.clipartmax.com/png/full/216-2164564_hyuga-hinata-sts-chibi-by-krizeii-hinata-hyuga-chibi-render.png" width="75%" style="margin-left: auto;margin-right: auto;display: block;">
