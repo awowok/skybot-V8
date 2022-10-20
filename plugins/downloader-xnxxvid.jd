@@ -1,0 +1,9 @@
+let handler = async (m, { conn, text }) => {
+	if (!text) throw 'url salah'
+	m.reply('wait')
+	await conn.sendButtonVid(m.chat, text, `*${htki} VIDEO ${htka}*`, author, 'Maciii:v', 'Huuu', m)
+}
+handler.command = /^xnxxdlvid((i|e)o)?$/i
+handler.limit = true
+
+export default handler

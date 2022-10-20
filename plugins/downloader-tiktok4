@@ -1,0 +1,18 @@
+import fetch from 'node-fetch'
+
+let handler = async (m, { conn, usedPrefix, command, text }) => {
+ 
+  if (!text) return m.reply(`Use Example: ${usedPrefix+ command} https://vt.tiktok.com/ZSJE2ffo4`)
+  let res = await fetch(`https://restapi.frteam.xyz/tiktok?url=${text}&apikey=${global.lolkey}`)
+  let res2 = await res.json()
+  let x = res2.data
+  let cap = `◎ *Description :* ${x.description}
+
+𝐃𝗼𝐰𝐧𝐥𝗼𝐚𝐝 𝐓𝐢𝐤𝐓𝗼𝐤 | 𝐁𝐲 ${global.author}`
+conn.sendFile(m.chat, x.video.no_watermark, 'tiktok.mp4', cap, m)
+}
+handler.help = ['tiktok', 'tt']
+handler.tags = ['downloader']
+handler.command = /^(tiktok)$/i
+
+export default handler
