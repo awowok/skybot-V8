@@ -1,26 +1,5 @@
 # SkyBot-MD
 
-<p align="center">
-	<img src="https://www.clipartmax.com/png/full/216-2164564_hyuga-hinata-sts-chibi-by-krizeii-hinata-hyuga-chibi-render.png" width="75%" style="margin-left: auto;margin-right: auto;display: block;">
-
-
-</p>
-<p align="center">
-<a href="#"><img title="Hinata" src="https://img.shields.io/badge/Hinata-green?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
-</p>
-<p align="center">
-<a href="https://github.com/AyGemuy"><img title="AyGemuy" src="https://img.shields.io/badge/Author-AyGemuy-red.svg?style=for-the-badge&logo=github"></a>
-</p>
-<p align="center">
-</p>
-</div>
-<p align="center">
-<a href="https://github.com/AyGemuy/followers"><img title="Followers" src="https://img.shields.io/github/followers/AyGemuy?style=flat-square"></a>
-<a href="https://github.com/AyGemuy/Hinata/stargazers"><img title="Stars" src="https://img.shields.io/github/stars/AyGemuy/Hinata?style=flat-square"></a>
-<a href="https://github.com/AyGemuy/Hinata/network/members"><img title="Forks" src="https://img.shields.io/github/forks/AyGemuy/Hinata?style=flat-square"></a>
-<a href="https://github.com/AyGemuy/Hinata/watchers"><img title="watchers" src="https://img.shields.io/github/watchers/AyGemuy/Hinata?style=flat-square"></a>
-</p>
-
 
 #### Join Group
 [![Group Bot](https://img.shields.io/badge/WhatsApp%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/KS51Xw91eju8HTv5owtV1z)
